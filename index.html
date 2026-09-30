@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NETTECH — Guía Interactiva de Cableado UTP y Estándares T568A / T568B</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BARRA DE PROGRESO DE LECTURA / APRENDIZAJE -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <i class="fa-solid fa-network-wired"></i>
+        <span>NET<strong>TECH</strong></span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Inicio</a></li>
+          <li><a href="#intro" class="nav-link">UTP</a></li>
+          <li><a href="#t568a" class="nav-link">T568A</a></li>
+          <li><a href="#t568b" class="nav-link">T568B</a></li>
+          <li><a href="#comparativa-estandares" class="nav-link">T568A vs B</a></li>
+          <li><a href="#actividad" class="nav-link">Taller</a></li>
+          <li><a href="#categorias" class="nav-link">Cat 5e/6</a></li>
+          <li><a href="#anatomia" class="nav-link">Anatomía</a></li>
+          <li><a href="#buenas-practicas" class="nav-link">Prácticas</a></li>
+          <li><a href="#quiz" class="nav-link">Quiz</a></li>
+          <li><a href="#examen" class="nav-link">Examen</a></li>
+          <li><a href="#glosario" class="nav-link">Glosario</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li><a href="#fuentes" class="nav-link">Fuentes</a></li>
+        </ul>
+      </nav>
+
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="badge"><i class="fa-solid fa-graduation-cap"></i> Plataforma Educativa Interactiva</span>
+        <h1>Estándares T568A y T568B</h1>
+        <p class="subtitle">Guía interactiva sobre cableado UTP, códigos de colores y categorías Cat 5e y Cat 6</p>
+        <p class="description">
+          Aprende cómo funcionan los estándares de cableado Ethernet, identifica correctamente cada conductor y descubre las diferencias entre las categorías de cable UTP más utilizadas en redes informáticas.
+        </p>
+        <div class="hero-buttons">
+          <a href="#intro" class="btn btn-primary"><i class="fa-solid fa-compass"></i> Explorar contenido</a>
+          <a href="#t568a" class="btn btn-outline"><i class="fa-solid fa-palette"></i> Ver código de colores</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-card">
+          <img src="Foto principal.jpg" alt="Rack de Redes y Servidores">
+          <div class="glow-effect"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1: ¿QUÉ ES EL CABLEADO UTP? -->
+  <section id="intro" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Qué es el Cableado UTP?</h2>
+        <p>Fundamentos de los cables de par trenzado no blindado en infraestructura LAN</p>
+      </div>
+
+      <div class="grid-2 gap-2 mb-3">
+        <div class="card-glass">
+          <h3><i class="fa-solid fa-circle-info text-cyan"></i> Definición y Propósito</h3>
+          <p><strong>UTP</strong> significa <em>Unshielded Twisted Pair</em> (Par Trenzado no Blindado). Es el tipo de cableado de cobre flexible más común utilizado para interconectar dispositivos de red en salas de telecomunicaciones, oficinas y viviendas.</p>
+          <p>Consiste en <strong>8 conductores de cobre</strong> aislados individualmente y entrelazados de dos en dos formando 4 pares. El trenzado reduce la interferencia electromagnética (EMI) y la diafonía (*crosstalk*) entre los conductores contiguos.</p>
+        </div>
+        <div class="card-glass">
+          <h3><i class="fa-solid fa-network-wired text-cyan"></i> Relación con el Estándar Ethernet</h3>
+          <p>Las redes IEEE 802.3 (Ethernet) dependen del cable UTP para la transmisión de señales digitales codificadas. La organización de los conductores dentro de los conectores bajo las normas <strong>ANSI/TIA-568</strong> asegura la compatibilidad electromagnética mundial entre equipos de cualquier fabricante.</p>
+        </div>
+      </div>
+
+      <!-- 4 TARJETAS -->
+      <div class="grid-4">
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-tower-broadcast"></i></div>
+          <h4>Transmisión de datos</h4>
+          <p>Envía señales eléctricas diferenciales a alta velocidad minimizando la atenuación del flujo de paquetes de datos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-plug"></i></div>
+          <h4>Conectividad</h4>
+          <p>Vincula PCs, switches, routers, puntos de acceso Wi-Fi, cámaras IP y teléfonos VoIP mediante la interfaz RJ45/8P8C.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-dna"></i></div>
+          <h4>Pares trenzados</h4>
+          <p>El entrelazado cancela el ruido electromagnético ambiental mediante el principio de señalización diferencial.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+          <h4>Redes Ethernet</h4>
+          <p>Es la espina dorsal física de las arquitecturas de red local LAN desde Fast Ethernet hasta Gigabit y 10-Gigabit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: ESTÁNDAR T568A -->
+  <section id="t568a" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Estándar T568A</h2>
+        <p>Esquema de terminación para cableado de par trenzado en instalaciones estructuradas</p>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <p>El estándar <strong>T568A</strong> especifica la secuencia de asignación del código de colores para la conectorización de cables UTP de 8 hilos. Es la norma recomendada históricamente para instalaciones de cableado horizontal en edificaciones del gobierno federal y proyectos de infraestructura renovada.</p>
+          <p>Asegura el soporte para transmisiones analógicas de voz y datos digitales de alta velocidad mediante una correcta distribución de señales en transmisión (TX) y recepción (RX).</p>
+
+          <table class="color-table">
+            <thead>
+              <tr>
+                <th>Pin</th>
+                <th>Color Conductor</th>
+                <th>Par Asignado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><span class="color-dot dot-bv"></span> Blanco / Verde</td><td>Par 3</td></tr>
+              <tr><td>2</td><td><span class="color-dot dot-v"></span> Verde</td><td>Par 3</td></tr>
+              <tr><td>3</td><td><span class="color-dot dot-bn"></span> Blanco / Naranja</td><td>Par 2</td></tr>
+              <tr><td>4</td><td><span class="color-dot dot-a"></span> Azul</td><td>Par 1</td></tr>
+              <tr><td>5</td><td><span class="color-dot dot-ba"></span> Blanco / Azul</td><td>Par 1</td></tr>
+              <tr><td>6</td><td><span class="color-dot dot-n"></span> Naranja</td><td>Par 2</td></tr>
+              <tr><td>7</td><td><span class="color-dot dot-bm"></span> Blanco / Marrón</td><td>Par 4</td></tr>
+              <tr><td>8</td><td><span class="color-dot dot-m"></span> Marrón</td><td>Par 4</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rj45-interactive-container">
+          <h3><i class="fa-solid fa-hand-pointer"></i> Conector RJ45 (T568A Interactivo)</h3>
+          <p class="small-text mb-2">Pasa el cursor o pulsa sobre cada pin para inspeccionar su par y color correspondiente:</p>
+          
+          <div class="rj45-connector" id="rj45-a">
+            <div class="pin" data-pin="1" data-color="Blanco/Verde" data-pair="Par 3 (TX+)" style="background: linear-gradient(90deg, #4caf50 50%, #ffffff 50%);">1</div>
+            <div class="pin" data-pin="2" data-color="Verde" data-pair="Par 3 (TX-)" style="background: #4caf50;">2</div>
+            <div class="pin" data-pin="3" data-color="Blanco/Naranja" data-pair="Par 2 (RX+)" style="background: linear-gradient(90deg, #ff9800 50%, #ffffff 50%);">3</div>
+            <div class="pin" data-pin="4" data-color="Azul" data-pair="Par 1 (Voz/Datos)" style="background: #2196f3;">4</div>
+            <div class="pin" data-pin="5" data-color="Blanco/Azul" data-pair="Par 1 (Voz/Datos)" style="background: linear-gradient(90deg, #2196f3 50%, #ffffff 50%);">5</div>
+            <div class="pin" data-pin="6" data-color="Naranja" data-pair="Par 2 (RX-)" style="background: #ff9800;">6</div>
+            <div class="pin" data-pin="7" data-color="Blanco/Marrón" data-pair="Par 4 (Auxiliar)" style="background: linear-gradient(90deg, #795548 50%, #ffffff 50%);">7</div>
+            <div class="pin" data-pin="8" data-color="Marrón" data-pair="Par 4 (Auxiliar)" style="background: #795548;">8</div>
+          </div>
+
+          <div class="pin-info-box" id="info-a">
+            <span class="info-title">Pasa sobre un pin del conector</span>
+            <span class="info-desc">Aparecerán los datos técnicos de la terminación.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: ESTÁNDAR T568B -->
+  <section id="t568b" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Estándar T568B</h2>
+        <p>Esquema de terminación más extendido comercialmente en instalaciones de red</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="rj45-interactive-container">
+          <h3><i class="fa-solid fa-hand-pointer"></i> Conector RJ45 (T568B Interactivo)</h3>
+          <p class="small-text mb-2">Pasa el cursor o pulsa sobre cada pin para inspeccionar su par y color correspondiente:</p>
+          
+          <div class="rj45-connector" id="rj45-b">
+            <div class="pin" data-pin="1" data-color="Blanco/Naranja" data-pair="Par 2 (TX+)" style="background: linear-gradient(90deg, #ff9800 50%, #ffffff 50%);">1</div>
+            <div class="pin" data-pin="2" data-color="Naranja" data-pair="Par 2 (TX-)" style="background: #ff9800;">2</div>
+            <div class="pin" data-pin="3" data-color="Blanco/Verde" data-pair="Par 3 (RX+)" style="background: linear-gradient(90deg, #4caf50 50%, #ffffff 50%);">3</div>
+            <div class="pin" data-pin="4" data-color="Azul" data-pair="Par 1 (Voz/Datos)" style="background: #2196f3;">4</div>
+            <div class="pin" data-pin="5" data-color="Blanco/Azul" data-pair="Par 1 (Voz/Datos)" style="background: linear-gradient(90deg, #2196f3 50%, #ffffff 50%);">5</div>
+            <div class="pin" data-pin="6" data-color="Verde" data-pair="Par 3 (RX-)" style="background: #4caf50;">6</div>
+            <div class="pin" data-pin="7" data-color="Blanco/Marrón" data-pair="Par 4 (Auxiliar)" style="background: linear-gradient(90deg, #795548 50%, #ffffff 50%);">7</div>
+            <div class="pin" data-pin="8" data-color="Marrón" data-pair="Par 4 (Auxiliar)" style="background: #795548;">8</div>
+          </div>
+
+          <div class="pin-info-box" id="info-b">
+            <span class="info-title">Pasa sobre un pin del conector</span>
+            <span class="info-desc">Aparecerán los datos técnicos de la terminación.</span>
+          </div>
+        </div>
+
+        <div>
+          <p>El estándar <strong>T568B</strong> proviene de la antigua especificación de AT&amp;T 258A y se ha convertido en la norma de facto más ampliamente distribuida en instalaciones corporativas y comerciales en América y parte de Europa.</p>
+          <p>La principal diferencia radicas en el intercambio de los pares de transmisión y recepción (Par Naranja y Par Verde) respecto a T568A.</p>
+
+          <table class="color-table">
+            <thead>
+              <tr>
+                <th>Pin</th>
+                <th>Color Conductor</th>
+                <th>Par Asignado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><span class="color-dot dot-bn"></span> Blanco / Naranja</td><td>Par 2</td></tr>
+              <tr><td>2</td><td><span class="color-dot dot-n"></span> Naranja</td><td>Par 2</td></tr>
+              <tr><td>3</td><td><span class="color-dot dot-bv"></span> Blanco / Verde</td><td>Par 3</td></tr>
+              <tr><td>4</td><td><span class="color-dot dot-a"></span> Azul</td><td>Par 1</td></tr>
+              <tr><td>5</td><td><span class="color-dot dot-ba"></span> Blanco / Azul</td><td>Par 1</td></tr>
+              <tr><td>6</td><td><span class="color-dot dot-v"></span> Verde</td><td>Par 3</td></tr>
+              <tr><td>7</td><td><span class="color-dot dot-bm"></span> Blanco / Marrón</td><td>Par 4</td></tr>
+              <tr><td>8</td><td><span class="color-dot dot-m"></span> Marrón</td><td>Par 4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: COMPARACIÓN T568A VS T568B -->
+  <section id="comparativa-estandares" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>T568A vs T568B</h2>
+        <p>Análisis técnico comparativo entre esquemas normativos ANSI/TIA-568</p>
+      </div>
+
+      <div class="card-glass mb-3">
+        <p>Ambos estándares proveen el mismo rendimiento eléctrico, ancho de banda e inmunidad ante el ruido. **Ninguno es intrínsecamente superior al otro en velocidad o calidad**. La única diferencia operativa radica en qué color de par trenzado realiza la función de transmisión (TX) y cuál la de recepción (RX) en los pines 1, 2, 3 y 6.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Estándar T568A</th>
+              <th>Estándar T568B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Pines que cambian</strong></td>
+              <td>Pines 1, 2 (Verde) y 3, 6 (Naranja)</td>
+              <td>Pines 1, 2 (Naranja) y 3, 6 (Verde)</td>
+            </tr>
+            <tr>
+              <td><strong>Par Verde</strong></td>
+              <td>Ubicado en Pines 1 y 2 (Transmisión)</td>
+              <td>Ubicado en Pines 3 y 6 (Recepción)</td>
+            </tr>
+            <tr>
+              <td><strong>Par Naranja</strong></td>
+              <td>Ubicado en Pines 3 y 6 (Recepción)</td>
+              <td>Ubicado en Pines 1 y 2 (Transmisión)</td>
+            </tr>
+            <tr>
+              <td><strong>Par Azul (4 y 5)</strong></td>
+              <td>Idéntico posición en ambos</td>
+              <td>Idéntico posición en ambos</td>
+            </tr>
+            <tr>
+              <td><strong>Par Marrón (7 y 8)</strong></td>
+              <td>Idéntico posición en ambos</td>
+              <td>Idéntico posición en ambos</td>
+            </tr>
+            <tr>
+              <td><strong>Uso Recomendado</strong></td>
+              <td>Proyectos federales / Compatibilidad USOC antigua</td>
+              <td>Nivel comercial, residencial e industrial ampliamente extendido</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TIPOS DE CABLE DIRECTO Y CRUZADO -->
+      <div class="grid-2 gap-2 mt-4">
+        <div class="card-glass">
+          <h3><i class="fa-solid fa-arrows-left-right text-cyan"></i> Cable Directo (Straight-Through)</h3>
+          <p>Se construye manteniendo el mismo esquema en ambos extremos:</p>
+          <div class="tech-badge-container mb-2">
+            <span class="tech-badge">Extremo 1: T568A</span> ➔ <span class="tech-badge">Extremo 2: T568A</span>
+          </div>
+          <div class="tech-badge-container">
+            <span class="tech-badge">Extremo 1: T568B</span> ➔ <span class="tech-badge">Extremo 2: T568B</span>
+          </div>
+          <p class="mt-2"><strong>Uso:</strong> Conectar dispositivos de diferente tipo (Ej: PC a Switch, Router a Switch).</p>
+        </div>
+
+        <div class="card-glass">
+          <h3><i class="fa-solid fa-arrows-rotate text-cyan"></i> Cable Cruzado (Crossover)</h3>
+          <p>Se fabrica alternando la norma en los extremos opuestos:</p>
+          <div class="tech-badge-container">
+            <span class="tech-badge">Extremo 1: T568A</span> ➔ <span class="tech-badge">Extremo 2: T568B</span>
+          </div>
+          <p class="mt-2"><strong>Uso tradicional:</strong> Conectar dispositivos iguales (Ej: PC a PC, Switch a Switch).</p>
+          <p class="small-text text-muted mt-1"><em>Nota Auto-MDI/MDIX:</em> Las tarjetas de red modernas detectan automáticamente las señales e invierten los pines por software, haciendo innecesarios los cables cruzados en la actualidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: ACTIVIDAD INTERACTIVA -->
+  <section id="actividad" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Puedes ordenar los conductores?</h2>
+        <p>Demuestra tus conocimientos armando la secuencia de colores de red</p>
+      </div>
+
+      <div class="activity-box card-glass">
+        <div class="activity-controls">
+          <label for="standardSelect"><strong>Elige el Estándar a armar:</strong></label>
+          <select id="standardSelect" class="custom-select">
+            <option value="T568B">Estándar T568B</option>
+            <option value="T568A">Estándar T568A</option>
+          </select>
+          <button id="resetActivity" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-right"></i> Reiniciar / Mezclar</button>
+        </div>
+
+        <p class="instruction-text">Haz clic en los hilos de la paleta desordenada para ubicarlos ordenadamente en los pines de destino (1 al 8):</p>
+
+        <!-- PALETA DE COLORES DESORDENADOS -->
+        <div class="palette-container" id="colorPalette">
+          <!-- Generado con JS -->
+        </div>
+
+        <!-- SLOTS DE DESTINO (Pines 1 al 8) -->
+        <div class="slots-container" id="wireSlots">
+          <!-- Generado con JS -->
+        </div>
+
+        <div class="activity-actions">
+          <button id="checkAssembly" class="btn btn-primary"><i class="fa-solid fa-circle-check"></i> Comprobar Ordenamiento</button>
+        </div>
+
+        <div id="activityFeedback" class="feedback-msg"></div>
+        <div class="attempts-counter">Intentos realizados: <span id="attemptsCount">0</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: ANATOMÍA DE CABLE UTP Y CONECTOR RJ45 -->
+  <section id="anatomia" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Anatomía y Conectores</h2>
+        <p>Estructura física del cable UTP y conector de red 8P8C / RJ45</p>
+      </div>
+
+      <div class="grid-3 mb-3">
+        <div class="media-card">
+          <img src="Conector RJ45 de Cable Ethernet.jpg" alt="Conector RJ45 de Cable Ethernet">
+          <div class="media-card-body">
+            <h4>Conector RJ45 / 8P8C</h4>
+            <p>Componente plástico transparente con 8 contactos metálicos bañados en oro que al crimparse penetran la cubierta de cada conductor.</p>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <img src="Cable UTP pelado y pares trenzados.jpg" alt="Cable UTP Pelado y Pares Trenzados">
+          <div class="media-card-body">
+            <h4>Pares Trenzados UTP</h4>
+            <p>4 pares de hilos de cobre trenzados con diferente paso de rosca por par para cancelar diafonías cruzadas.</p>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <img src="Cables Cat 5e y Cat 6.jpg" alt="Cables Cat 5e y Cat 6">
+          <div class="media-card-body">
+            <h4>Malla y Separador Central</h4>
+            <p>Los cables Cat 6 incluyen una cruceta plástica (*spline*) para aislar físicamente cada par y mitigar interferencias.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPONENTES ANATÓMICOS DETALLADOS -->
+      <div class="anatomy-interactive grid-4">
+        <div class="anatomy-item card-glass" data-info="Protege los 4 pares trenzados de la humedad, abrasión física y flexión excesiva. Fabricada en PVC o LSZH (Low Smoke Zero Halogen).">
+          <div class="anatomy-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>1. Cubierta Exterior</h4>
+          <p>Protección exterior de PVC/LSZH</p>
+        </div>
+        <div class="anatomy-item card-glass" data-info="Conductores de cobre multifilar o monofilar (23 o 24 AWG) trenzados en pares para reducir ruidos.">
+          <div class="anatomy-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <h4>2. Pares Trenzados</h4>
+          <p>4 Pares de cobre entrelazado</p>
+        </div>
+        <div class="anatomy-item card-glass" data-info="Cruceta aislante en forma de '+' usada en Cat 6 para separar los pares y reducir la diafonía (NEXT).">
+          <div class="anatomy-icon"><i class="fa-solid fa-plus"></i></div>
+          <h4>3. Separador (Spline)</h4>
+          <p>Núcleo divisorio en Cat 6</p>
+        </div>
+        <div class="anatomy-item card-glass" data-info="Interfaz transparente de 8 pines metálicos para conectar al puerto Ethernet RJ45 de los dispositivos.">
+          <div class="anatomy-icon"><i class="fa-solid fa-plug"></i></div>
+          <h4>4. Conector 8P8C</h4>
+          <p>Conector final crimpado</p>
+        </div>
+      </div>
+
+      <div id="anatomyDetail" class="card-glass mt-3 text-center text-cyan">
+        <em>Haz clic en cualquiera de los componentes anatómicos para ver sus especificaciones.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: CATEGORÍAS CAT 5E Y CAT 6 -->
+  <section id="categorias" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Categorías Cat 5e y Cat 6</h2>
+        <p>Evolución de ancho de banda y especificaciones técnicas normativas</p>
+      </div>
+
+      <div class="grid-2 gap-2 mb-3">
+        <!-- CAT 5E -->
+        <div class="card-glass">
+          <div class="cat-header">
+            <h3>Categoría 5e (Enhanced)</h3>
+            <span class="badge-cat">Hasta 1 Gbps</span>
+          </div>
+          <p>Aprobada en 1999 como actualización del estándar Cat 5. Diseñada para mitigar la diafonía extrema (*Far-End Crosstalk* - FEXT).</p>
+          <ul class="cat-specs">
+            <li><i class="fa-solid fa-bolt text-cyan"></i> <strong>Frecuencia:</strong> 100 MHz</li>
+            <li><i class="fa-solid fa-gauge-high text-cyan"></i> <strong>Velocidad Máxima:</strong> 1,000 Mbps (1 Gbps)</li>
+            <li><i class="fa-solid fa-ruler-horizontal text-cyan"></i> <strong>Distancia Máx:</strong> 100 metros</li>
+            <li><i class="fa-solid fa-ruler-combined text-cyan"></i> <strong>Calibre Típico:</strong> 24 AWG</li>
+          </ul>
+        </div>
+
+        <!-- CAT 6 -->
+        <div class="card-glass">
+          <div class="cat-header">
+            <h3>Categoría 6</h3>
+            <span class="badge-cat">Hasta 10 Gbps</span>
+          </div>
+          <p>Estándar introducido para redes Gigabit avanzadas e infraestructura 10GBASE-T a distancias cortas, reduciendo drásticamente la diafonía.</p>
+          <ul class="cat-specs">
+            <li><i class="fa-solid fa-bolt text-cyan"></i> <strong>Frecuencia:</strong> 250 MHz</li>
+            <li><i class="fa-solid fa-gauge-high text-cyan"></i> <strong>Velocidad Máxima:</strong> 10 Gbps (a &le; 37-55m) / 1 Gbps (100m)</li>
+            <li><i class="fa-solid fa-ruler-horizontal text-cyan"></i> <strong>Distancia Máx:</strong> 100 metros (1Gbps)</li>
+            <li><i class="fa-solid fa-ruler-combined text-cyan"></i> <strong>Calibre Típico:</strong> 23 AWG (Conductor más grueso)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TABLA COMPARATIVA CATEGORÍAS -->
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Parámetro Técnico</th>
+              <th>Categoría 5e</th>
+              <th>Categoría 6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ancho de Banda (Frecuencia)</strong></td>
+              <td>100 MHz</td>
+              <td>250 MHz</td>
+            </tr>
+            <tr>
+              <td><strong>Velocidad de Transferencia</strong></td>
+              <td>1 Gbps (1000BASE-T)</td>
+              <td>10 Gbps (10GBASE-T a distancias cortas)</td>
+            </tr>
+            <tr>
+              <td><strong>Mitigación de Diafonía (Crosstalk)</strong></td>
+              <td>Estándar básico (Paso de trenzado standard)</td>
+              <td>Avanzado (Trenzado más denso + Separador Spline)</td>
+            </tr>
+            <tr>
+              <td><strong>Grosor Conductor (AWG)</strong></td>
+              <td>24 AWG (Aproximadamente 0.51 mm)</td>
+              <td>23 AWG (Aproximadamente 0.57 mm)</td>
+            </tr>
+            <tr>
+              <td><strong>Soporte PoE (Power over Ethernet)</strong></td>
+              <td>PoE estándar (802.3af / 802.3at)</td>
+              <td>PoE+ y PoE++ con menor disipación térmica</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: ERRORES COMUNES Y BUENAS PRÁCTICAS -->
+  <section id="buenas-practicas" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Errores Comunes y Buenas Prácticas</h2>
+        <p>Criterios fundamentales para la conectorización profesional y certificación</p>
+      </div>
+
+      <div class="grid-2 gap-2">
+        <!-- ERRORES -->
+        <div>
+          <h3 class="mb-2 text-danger"><i class="fa-solid fa-triangle-exclamation"></i> Errores Frecuentes al Fabricar Cables</h3>
+          
+          <div class="error-card">
+            <h4>❌ Destrenzado Excesivo</h4>
+            <p>Destrenzar más de 13 mm (0.5 pulgadas) los pares al ingresar al conector genera severa diafonía cercana (NEXT).</p>
+          </div>
+
+          <div class="error-card">
+            <h4>❌ Mal Empuje de la Cubierta</h4>
+            <p>Dejar la cubierta de PVC exterior fuera de la pestaña de retención del conector RJ45 provoca desgarro ante tirones.</p>
+          </div>
+
+          <div class="error-card">
+            <h4>❌ Mezcla de Estándares</h4>
+            <p>Conectar un extremo en T568A y otro en T568B creará involuntariamente un cable cruzado en lugar de directo.</p>
+          </div>
+
+          <div class="error-card">
+            <h4>❌ Sin Comprobación con Tester</h4>
+            <p>No certificar la continuidad ni el mapeo de pines con un probador de red (*LAN Tester*) antes de instalar.</p>
+          </div>
+        </div>
+
+        <!-- BUENAS PRÁCTICAS -->
+        <div>
+          <h3 class="mb-2 text-success"><i class="fa-solid fa-circle-check"></i> Buenas Prácticas de Instalación</h3>
+
+          <div class="practice-card">
+            <h4>✔ Mantener el Trenzado</h4>
+            <p>Conserva los giros de cada par tan cerca de los contactos dorados como sea físicamente posible.</p>
+          </div>
+
+          <div class="practice-card">
+            <h4>✔ Radio de Curvatura</h4>
+            <p>No dobles el cable con un radio inferior a 4 veces su diámetro exterior para no dañar los pares internos.</p>
+          </div>
+
+          <div class="practice-card">
+            <h4>✔ Respetar Código Único</h4>
+            <p>Adopta un único estándar (T568B recomendado en Latinoamérica) para toda la instalación del edificio.</p>
+          </div>
+
+          <div class="practice-card">
+            <h4>✔ Herramientas de Calidad</h4>
+            <p>Utiliza ponchadoras y crimpadoras de trinquete calibradas (*ratchet crimper*) para un contacto homogéneo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 9: MINI QUIZ INTERACTIVO -->
+  <section id="quiz" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Cuánto Aprendiste?</h2>
+        <p>Pon a prueba tus conocimientos sobre normas de cableado estructurado</p>
+      </div>
+
+      <div class="quiz-container card-glass">
+        <div id="quizBox">
+          <!-- El contenido del quiz se autogenera mediante JavaScript -->
+        </div>
+
+        <div id="quizResult" class="quiz-result-box hidden">
+          <h3><i class="fa-solid fa-trophy text-gold"></i> Resultado del Quiz</h3>
+          <p class="score-text" id="quizScoreText">Obtuviste 0 de 5 puntos</p>
+          <p id="quizFeedbackMessage"></p>
+          <button id="retryQuiz" class="btn btn-outline mt-2"><i class="fa-solid fa-rotate-left"></i> Reintentar Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 10: EXAMEN FINAL GOOGLE FORMS -->
+  <section id="examen" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Comprueba lo que Aprendiste</h2>
+        <p>Evaluación formal de conocimientos de cableado estructurado</p>
+      </div>
+
+      <div class="card-glass exam-banner">
+        <div class="exam-info">
+          <div class="exam-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <h3>Examen Final de Redes y Cableado</h3>
+            <p>Evaluación integral con preguntas teóricas y prácticas sobre T568A, T568B, Cat 5e y Cat 6.</p>
+            <ul class="exam-list">
+              <li><i class="fa-solid fa-check text-cyan"></i> <strong>Tiempo estimado:</strong> 5 minutos</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> <strong>Modalidad:</strong> Evaluación mediante Google Forms</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exam-buttons mt-3">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSef2Kl_bfeAkiid6SB77jk7zARnoZzj4-Xfyk4TERQEnGKk5Q/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-paper-plane"></i> COMENZAR EXAMEN
+          </a>
+        
+        </div>
+
+        <p class="small-text text-muted mt-2"><em>El resultado y la calificación del examen le llegaran por medio del correo ingresado en el formulario.</em></p>
+      </div>
+
+      <!-- CONTENEDOR IFRAME PARA FORMULARIO INCRUSTADO (SI SE PROPORCIONA LA URL) -->
+      <div id="iframeContainer" class="iframe-box hidden mt-3">
+        <!-- El iframe se cargará dinámicamente si GOOGLE_FORM_URL no está vacía -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 11: GLOSARIO DE REDES -->
+  <section id="glosario" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Glosario de Redes</h2>
+        <p>Términos clave de infraestructura de telecomunicaciones</p>
+      </div>
+
+      <div class="accordion" id="glossaryAccordion">
+        <!-- Término 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>UTP (Unshielded Twisted Pair)</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Cable de pares trenzados sin apantallamiento metálico individual, utilizado universalmente en redes Ethernet locales LAN.</p>
+          </div>
+        </div>
+
+        <!-- Término 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>T568A / T568B</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Específicos esquemas normalizados por TIA (Asociación de la Industria de las Telecomunicaciones)/EIA para la disposición de pines y código de colores 
+              en conectores RJ45 de 8 contactos.</p>
+          </div>
+        </div>
+
+        <!-- Término 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>RJ45 / 8P8C</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <div class="accordion-content">
+            <p>8P8C (8 Positions 8 Contacts) es la denominación técnica del conector modular. RJ45 hace referencia al código del estándar registrado de telecomunicaciones.</p>
+          </div>
+        </div>
+
+        <!-- Término 4 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Diafonía (Crosstalk / NEXT / FEXT)</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Interferencia electromagnética no deseada inducida por un par de hilos adyacente dentro del mismo cable durante la transmisión de datos.</p>
+          </div>
+        </div>
+
+        <!-- Término 5 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Auto-MDI/MDIX</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Tecnología que permite a las tarjetas de red adaptar automáticamente los pines de transmisión y recepción de un puerto, eliminando la necesidad de fabricar cables cruzados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 12: CONTACTO -->
+  <section id="contacto" class="section bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto y Consultas</h2>
+        <p>¿Tienes dudas sobre los estándares de cableado estructurado? Envíanos un mensaje</p>
+      </div>
+
+      <div class="grid-2 gap-2">
+        <!-- DATOS DE CONTACTO -->
+        <div class="card-glass">
+          <h3>Información de la plataforma</h3>
+          <p>Plataforma educativa de capacitación en redes de área local y sistemas de telecomunicaciones.</p>
+
+          <div class="contact-info-list mt-3">
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope text-cyan"></i>
+              <div>
+                <strong>Correo Electrónico:</strong>
+                <p>Karinanazario618@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone text-cyan"></i>
+              <div>
+                <strong>Teléfono:</strong>
+                <p>+52 762 107 3281</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot text-cyan"></i>
+              <div>
+                <strong>Ubicación:</strong>
+                <p>Campuzano — Guerrero - México</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <div class="card-glass">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="fullName">Nombre Completo *</label>
+              <input type="text" id="fullName" class="form-input" placeholder="Ej. Ana Martínez" required>
+              <span class="error-msg" id="nameError">Por favor ingresa tu nombre</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo Electrónico *</label>
+              <input type="email" id="email" class="form-input" placeholder="ejemplo@correo.com" required>
+              <span class="error-msg" id="emailError">Ingresa un correo válido</span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" class="form-input" placeholder="Consulta sobre T568B">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje *</label>
+              <textarea id="message" rows="4" class="form-input" placeholder="Escribe tus dudas sobre cableado UTP..." required></textarea>
+              <span class="error-msg" id="messageError">Escribe un mensaje</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</button>
+            <div id="formStatus" class="mt-2 text-center"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 13: FUENTES Y REFERENCIAS -->
+  <section id="fuentes" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Fuentes y Referencias</h2>
+        <p>Documentación técnica y estándares normativos consultados</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="source-card card-glass">
+          <h4>ANSI / TIA-568.2-D</h4>
+          <p><strong>Organización:</strong> Telecommunications Industry Association (TIA)</p>
+          <p>Balanced Twisted-Pair Telecommunications Cabling and Components Standard.</p>
+          <a href="https://global.ihs.com" target="_blank" rel="noopener" class="source-link">Ver referencia <i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+
+        <div class="source-card card-glass">
+          <h4>ISO / IEC 11801</h4>
+          <p><strong>Organización:</strong> ISO / IEC</p>
+          <p>Generic cabling for customer premises — Structured cabling standards worldwide.</p>
+          <a href="https://www.iso.org" target="_blank" rel="noopener" class="source-link">Ver referencia <i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+
+        <div class="source-card card-glass">
+          <h4>IEEE 802.3 Standard</h4>
+          <p><strong>Organización:</strong> IEEE Standards Association</p>
+          <p>IEEE Standard for Ethernet — Physical Layer Specifications for UTP cables.</p>
+          <a href="https://standards.ieee.org" target="_blank" rel="noopener" class="source-link">Ver referencia <i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <div class="logo">
+          <i class="fa-solid fa-network-wired"></i>
+          <span>NET<strong>TECH</strong></span>
+        </div>
+        <p class="mt-1">Estándares de Cableado de Redes — Plataforma interactiva sobre sistemas de cableado estructurado, códigos T568A/B y categorías Ethernet.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#t568a">T568A</a></li>
+          <li><a href="#t568b">T568B</a></li>
+          <li><a href="#categorias">Cat 5e / Cat 6</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#examen">Examen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 — Proyecto Educativo de Cableado de Redes y Telecomunicaciones.</p>
+    </div>
+  </footer>
+
+  <!-- ARCHIVO JAVASCRIPT PRINCIPAL -->
+  <script src="script.js"></script>
+  </body>
+</html>
